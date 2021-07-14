@@ -1,0 +1,83 @@
+version: '3'
+
+services:
+#    api-service:
+#        build: ./flask
+#        volumes: 
+#            - ./flask:/usr/src/app
+#        ports: 
+#            - 5001:80
+
+#    api2-service:
+#        build: ./flask1
+#        volumes: 
+#            - ./flask1:/usr/src/app
+#        ports: 
+#            - 5002:80
+#        depends_on: 
+#            - api-service
+ 
+#    php-services:
+#        image: php:apache
+#        volumes: 
+#            - ./phpapp:/var/www/html
+#            - ./phpapp:/var/www
+#        ports: 
+#            - 5003:80
+#    firefox-service:
+#        build: ./firefox
+#        environment: 
+#            - DISPLAY=${DISPLAY}
+#        volumes: 
+#            - ./tmp/.X11-unix:/tmp/.X11-unix
+#        network_mode: host
+#    wireshark-service:
+#        build: ./wireshark
+#        environment: 
+#            - DISPLAY=${DISPLAY}
+#        volumes: 
+#            - ./tmp/.X11-unix:/tmp/.X11-unix
+#        network_mode: host
+
+#    react-services:
+#        build: ./reactjsapp
+#        #stdin_open: true
+#        #tty: true
+#        ports: 
+#            - "5004:3000"
+#        volumes: 
+#            - ./reactjsapp/frontend/src:/app/src
+#        environment: 
+#            - REACT_APP_NAME=test
+#        #env_file: 
+#        #    - ./reactjsapp/.env
+#    postgres-db:
+#        image: postgres
+#        volumes: 
+#            - ./postgres/db:/var/lib/postgresql/data
+#        environment: 
+#             POSTGRES_PASSWORD: "password"
+#        ports: 
+#            - "5432:5432"
+#    rails-services:
+#        build: ./rails
+#        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+#        volumes:
+#            - .:/myapp
+#        ports:
+#            - "3000:3000"
+#        #depends_on:
+#        #    - db
+    mysql-services:
+        image: maria
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            - MYSQL_ROOT_PASSWORD=maestriadb
+            - MYSQL_DATABASE=maestriadb
+            - MYSQL_USER=maestriadb
+            - MYSQL_PASSWORD=maestriadb
+        volumes:
+            - .mysql/mysql-data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        network_mode: host
