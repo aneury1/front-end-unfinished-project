@@ -1,0 +1,7 @@
+video list:
+https://www.youtube.com/watch?v=tBr-PybP_9c
+
+GitHub Code: https://github.com/WebDevSimplified/W...
+useRef Tutorial: https://youtu.be/t2ypzz6gJm0
+useState Tutorial: https://youtu.be/O6P86uwfdR0
+useContext Tutorial: https://youtu.be/5LrDIWkK_Bc
